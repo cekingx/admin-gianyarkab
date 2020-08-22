@@ -79,4 +79,28 @@ class Pengumuman_test extends TestCase
         $output = $this->request('GET', "/admin/pengumuman/$pengumuman_id");
         $this->assertResponseCode(404);
     }
+
+    public function test_WhenYouSuccessAddPengumumanThenYouRedirectedToIndex()
+    {
+        $this->request->setCallable(
+            function ($CI) {
+                $pengumuman_model = $this->getDouble(
+                    'Pengumuman_model', ['save' => true]
+                );
+                $CI->pengumuman_model = $pengumuman_model;
+            }
+        );
+
+        $output = $this->request(
+            'POST',
+            '/admin/pengumuman/store',
+            [
+                'pengumuman_judul' => 'Pengumuman2',
+                'pengumuman_isi' => 'Isi pengumuman2',
+                'pengumuman_user_id' => 3
+            ]
+        );
+
+        $this->assertRedirect('/admin/pengumuman', 302);
+    }
 }

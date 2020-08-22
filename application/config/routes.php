@@ -54,4 +54,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 $route['admin/pengumuman'] = 'pengumuman/index';
+$route['admin/pengumuman/create'] = 'pengumuman/create';
 $route['admin/pengumuman/(:any)'] = 'pengumuman/show/$1';

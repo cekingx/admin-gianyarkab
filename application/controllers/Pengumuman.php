@@ -27,12 +27,14 @@ class Pengumuman extends CI_Controller
         }
 
         $data['content'] = 'pengumuman/show';
+        $data['title'] = $data['pengumuman']['pengumuman_judul'];
         $this->load->view('layouts/master', $data);
     }
 
     public function create()
     {
-
+        $data['content'] = 'pengumuman/create';
+        $this->load->view('layouts/master', $data);
     }
 
     public function store()
