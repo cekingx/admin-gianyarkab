@@ -22,6 +22,18 @@
     <div class="container">
         <!--begin::Dashboard-->
         <!--begin::Row-->
+        <!-- begin::notification -->
+        <?php if(isset($message)) {
+            echo('
+            <div class="alert alert-success alert-dismissable fade show" role="alert">'
+                . $message .
+                '<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            ');
+        } ?>
+        <!-- end::notification -->
         <div class="card card-custom">
             <div class="card-header flex-wrap border-0 pt-6 pb-0">
                 <div class="card-title">Daftar Pengumuman</div>

@@ -8,12 +8,12 @@ CKEDITOR.editorConfig = function( config ) {
 	// For complete reference see:
 	// https://ckeditor.com/docs/ckeditor4/latest/api/CKEDITOR_config.html
 
-	config.filebrowserBrowseUrl = 'http://localhost/gianyarkab/assets/kcfinder/browse.php?type=files';
-    config.filebrowserImageBrowseUrl = 'http://localhost/gianyarkab/assets/kcfinder/browse.php?type=images';
-    config.filebrowserFlashBrowseUrl = 'http://localhost/gianyarkab/assets/kcfinder/browse.php?type=flash';
-    config.filebrowserUploadUrl = 'http://localhost/gianyarkab/kcfinder/upload.php?type=files';
-    config.filebrowserImageUploadUrl = 'http://localhost/gianyarkab/assets/kcfinder/upload.php?type=images';
-	config.filebrowserFlashUploadUrl = 'http://localhost/gianyarkab/assets/kcfinder/upload.php?type=flash';
+	config.filebrowserBrowseUrl = 'http://localhost/kcfinder/browse.php?type=files';
+    config.filebrowserImageBrowseUrl = 'http://localhost/kcfinder/browse.php?type=images';
+    config.filebrowserFlashBrowseUrl = 'http://localhost/kcfinder/browse.php?type=flash';
+    config.filebrowserUploadUrl = 'http://localhost/kcfinder/upload.php?type=files';
+    config.filebrowserImageUploadUrl = 'http://localhost/kcfinder/upload.php?type=images';
+	config.filebrowserFlashUploadUrl = 'http://localhost/kcfinder/upload.php?type=flash';
 	// The toolbar groups arrangement, optimized for two toolbar rows.
 	config.toolbarGroups = [
 		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },

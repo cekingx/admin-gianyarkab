@@ -8,7 +8,6 @@ class Pengumuman_model extends CI_Model
     public $pengumuman_id;
     public $pengumuman_judul;
     public $pengumuman_isi;
-    public $pengumuman_tanggal;
     public $pengumuman_user_id;
 
     public function rules()
@@ -44,6 +43,7 @@ class Pengumuman_model extends CI_Model
         $this->pengumuman_isi = $post['pengumuman_isi'];
         $this->pengumuman_user_id = $post['pengumuman_user_id'];
 
+        $this->db->set('pengumuman_tanggal', 'NOW()', FALSE);
         return $this->db->insert($this->table, $this);
     }
 
@@ -53,6 +53,7 @@ class Pengumuman_model extends CI_Model
         $this->pengumuman_id = $pengumuman_id;
         $this->pengumuman_judul = $post['pengumuman_judul'];
         $this->pengumuman_isi = $post['pengumuman_isi'];
+        $this->pengumuman_user_id = $post['pengumuman_user_id'];
 
         $this->db->where('pengumuman_id', $this->pengumuman_id);
         return $this->db->update($this->table, $this);

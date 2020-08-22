@@ -1,4 +1,4 @@
-<title>Buat Pengumuman</title>
+<title>Edit Pengumuman</title>
 
 <div class="d-flex flex-column-fluid">
     <!--begin::Container-->
@@ -22,14 +22,26 @@
         <div class="card card-custom">
             <div class="card-header">
                 <div class="card-title">
-                    <h3 class="card-label">Buat pengumuman</h3>
+                    <h3 class="card-label">Edit pengumuman</h3>
                 </div>
             </div>
             <div class="card-body">
-                <?= form_open('/admin/pengumuman/store'); ?>
+                <?= form_open('/admin/pengumuman/update'); ?>
+                    <input 
+                        type="hidden" 
+                        name="pengumuman_id" 
+                        value="<?= $pengumuman['pengumuman_id'] ?>"
+                    >
                     <div class="form-group">
                         <label for="pengumuman_judul">Judul</label> 
-                        <input type="text" class="form-control" id="pengumuman_judul" name="pengumuman_judul" required>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="pengumuman_judul" 
+                            name="pengumuman_judul" 
+                            value="<?= $pengumuman['pengumuman_judul'] ?>"
+                            required
+                        >
                     </div>
                     <div class="form-group">
                         <label for="pengumuman_isi">Isi</label>
@@ -38,11 +50,18 @@
                             id="pengumuman_isi" 
                             class="form-control"
                             required
-                        ></textarea>
+                        ><?= $pengumuman['pengumuman_isi'] ?></textarea>
                     </div>
                     <div class="form-group">
                         <label for="pengumuman_user_id">User Id</label>
-                        <input type="text" class="form-control" id="pengumuman_user_id" name="pengumuman_user_id" required>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="pengumuman_user_id" 
+                            name="pengumuman_user_id" 
+                            value="<?= $pengumuman['pengumuman_user_id'] ?>"
+                            required
+                        >
                     </div>
                     <button type="submit" class="btn btn-success">Simpan</button>
                 <?= form_close(); ?>

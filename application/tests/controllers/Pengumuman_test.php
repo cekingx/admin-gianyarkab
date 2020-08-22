@@ -103,4 +103,134 @@ class Pengumuman_test extends TestCase
 
         $this->assertRedirect('/admin/pengumuman', 302);
     }
+
+    public function test_WhenYouFailedAddPengumumanThenYouRedirectedToCreate()
+    {
+        $this->request->setCallable(
+            function ($CI) {
+                $pengumuman_model = $this->getDouble(
+                    'Pengumuman_model', ['save' => true]
+                );
+                $CI->pengumuman_model = $pengumuman_model;
+            }
+        );
+
+        $output = $this->request(
+            'POST',
+            '/admin/pengumuman/store',
+            [
+                'pengumuman_judul' => 'Pengumuman2',
+                'pengumuman_user_id' => 3
+            ]
+        );
+
+        $this->assertRedirect('/admin/pengumuman/create', 302);
+    }
+
+    public function test_WhenYouSuccessUpdatePengumumanThenYouRedirectedToIndex()
+    {
+        $this->request->setcallable(
+            function ($ci) {
+                $pengumuman_model = $this->getdouble(
+                    'pengumuman_model', ['update' => true]
+                );
+                $ci->pengumuman_model = $pengumuman_model;
+            }
+        );
+
+        $output = $this->request(
+            'POST',
+            '/admin/pengumuman/update',
+            [
+                'pengumuman_id' => 3,
+                'pengumuman_judul' => 'PengumumanUpdate',
+                'pengumuman_isi' => 'Isi pengumuman update',
+                'pengumuman_user_id' => 3
+            ]
+        );
+
+        $this->assertRedirect('/admin/pengumuman', 302);
+    }
+
+    public function test_WhenYouFailedUpdatePengumumanThenYouRedirectedToEdit()
+    {
+        $this->request->setcallable(
+            function ($ci) {
+                $pengumuman_model = $this->getdouble(
+                    'pengumuman_model', ['update' => true]
+                );
+                $ci->pengumuman_model = $pengumuman_model;
+            }
+        );
+
+        $pengumuman_id = 1;
+        $output = $this->request(
+            'POST',
+            '/admin/pengumuman/update',
+            [
+                'pengumuman_id' => $pengumuman_id,
+                'pengumuman_judul' => 'PengumumanUpdate',
+                'pengumuman_user_id' => 3
+            ]
+        );
+
+        $this->assertRedirect("/admin/pengumuman/edit/$pengumuman_id", 302);
+    }
+
+    public function test_WhenYouEditNotExistedPengumumanThenYouGet404()
+    {
+        $this->request->setcallable(
+            function ($ci) {
+                $pengumuman_model = $this->getdouble(
+                    'pengumuman_model', ['getById' => null]
+                );
+                $ci->pengumuman_model = $pengumuman_model;
+            }
+        );
+
+        $pengumuman_id = 1;
+        $output = $this->request('GET', "/admin/pengumuman/edit/$pengumuman_id");
+
+        $this->assertResponseCode(404);
+    }
+
+    public function test_WhenYouSuccessDeletePengumumanThenYouRedirectedToIndex()
+    {
+        $this->request->setcallable(
+            function ($ci) {
+                $pengumuman_model = $this->getdouble(
+                    'pengumuman_model', ['delete' => true]
+                );
+                $ci->pengumuman_model = $pengumuman_model;
+            }
+        );
+
+        $pengumuman_id = 1;
+        $this->request(
+            'GET',
+            "/admin/pengumuman/delete/$pengumuman_id"
+        );
+
+        $this->assertRedirect('/admin/pengumuman', 302);
+    }
+
+    public function test_WhenYouDeleteNotExistedPengumumanThenYouGet404()
+    {
+        $this->request->setcallable(
+            function ($ci) {
+                $pengumuman_model = $this->getdouble(
+                    'pengumuman_model', ['delete' => false]
+                );
+                $ci->pengumuman_model = $pengumuman_model;
+            }
+        );
+
+        $pengumuman_id = 1;
+        $this->request(
+            'GET',
+            "/admin/pengumuman/delete/$pengumuman_id"
+        );
+
+        $this->assertResponseCode(404);
+    }
 }
