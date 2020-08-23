@@ -5,7 +5,7 @@
  */
 class Pengumuman_test extends TestCase
 {
-    public function test_WhenYouAccessPengumumanThenYouGetAllPengumuman()
+    public function test_WhenYouAccessAllPengumumanThenYouGetAllPengumuman()
     {
         $result_array = [
             [
@@ -13,14 +13,12 @@ class Pengumuman_test extends TestCase
                 'pengumuman_judul' => 'Pengumuman1',
                 'pengumuman_isi' => 'Isi pengumuman1',
                 'pengumuman_tanggal' => '2020-08-21',
-                'pengumuman_user_id' => 3
             ],
             [
                 'pengumuman_id' => 2,
                 'pengumuman_judul' => 'Pengumuman2',
                 'pengumuman_isi' => 'Isi pengumuman2',
                 'pengumuman_tanggal' => '2020-08-21',
-                'pengumuman_user_id' => 3
             ]
         ];
 
@@ -46,7 +44,6 @@ class Pengumuman_test extends TestCase
             'pengumuman_judul' => 'Pengumuman1',
             'pengumuman_isi' => 'Isi pengumuman1',
             'pengumuman_tanggal' => '2020-08-21',
-            'pengumuman_user_id' => 3
         ];
 
         $this->request->setCallable(
@@ -97,7 +94,6 @@ class Pengumuman_test extends TestCase
             [
                 'pengumuman_judul' => 'Pengumuman2',
                 'pengumuman_isi' => 'Isi pengumuman2',
-                'pengumuman_user_id' => 3
             ]
         );
 
@@ -120,7 +116,6 @@ class Pengumuman_test extends TestCase
             '/admin/pengumuman/store',
             [
                 'pengumuman_judul' => 'Pengumuman2',
-                'pengumuman_user_id' => 3
             ]
         );
 
@@ -145,7 +140,6 @@ class Pengumuman_test extends TestCase
                 'pengumuman_id' => 3,
                 'pengumuman_judul' => 'PengumumanUpdate',
                 'pengumuman_isi' => 'Isi pengumuman update',
-                'pengumuman_user_id' => 3
             ]
         );
 
@@ -170,7 +164,6 @@ class Pengumuman_test extends TestCase
             [
                 'pengumuman_id' => $pengumuman_id,
                 'pengumuman_judul' => 'PengumumanUpdate',
-                'pengumuman_user_id' => 3
             ]
         );
 

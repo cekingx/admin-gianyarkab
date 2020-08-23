@@ -14,6 +14,11 @@
                     <span class="menu-text">Pengumuman</span>
                 </a>
             </li>
+            <li class="menu-item menu-item-rel <?php if ($this->uri->segment(2) == 'jabatan-bupati') : ?>menu-item-here<?php endif; ?>" data-menu-toggle="click" aria-haspopup="true">
+                <a href="<?php echo site_url('/admin/jabatan-bupati') ?>" class="menu-link">
+                    <span class="menu-text">Jabatan Bupati</span>
+                </a>
+            </li>
         </ul>
         <!--end::Header Nav-->
     </div>

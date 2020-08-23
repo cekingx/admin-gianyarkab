@@ -52,17 +52,6 @@
                             required
                         ><?= $pengumuman['pengumuman_isi'] ?></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="pengumuman_user_id">User Id</label>
-                        <input 
-                            type="text" 
-                            class="form-control" 
-                            id="pengumuman_user_id" 
-                            name="pengumuman_user_id" 
-                            value="<?= $pengumuman['pengumuman_user_id'] ?>"
-                            required
-                        >
-                    </div>
                     <button type="submit" class="btn btn-success">Simpan</button>
                 <?= form_close(); ?>
             </div>

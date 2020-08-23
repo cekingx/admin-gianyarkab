@@ -34,7 +34,6 @@ class Pengumuman_model_test extends TestCase
         $_POST = [
             'pengumuman_judul' => 'Pengumuman2',
             'pengumuman_isi' => 'Lowongan untuk pegawai kontrak',
-            'pengumuman_user_id' => 3
         ];
 
         $result = $this->obj->save();
@@ -56,7 +55,6 @@ class Pengumuman_model_test extends TestCase
         $_POST = [
             'pengumuman_judul' => $pengumuman['pengumuman_judul'],
             'pengumuman_isi' => $pengumuman['pengumuman_isi'],
-            'pengumuman_user_id' => $pengumuman['pengumuman_user_id']
         ];
 
         $status = $this->obj->update(2);

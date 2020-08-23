@@ -65,7 +65,6 @@
                             <th>Judul</th>
                             <th>Isi</th>
                             <th>Tanggal</th>
-                            <th>User Id</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -76,8 +75,16 @@
                             <td><?= $pengumuman['pengumuman_judul'] ?></td>
                             <td><?= $pengumuman['pengumuman_isi'] ?></td>
                             <td><?= $pengumuman['pengumuman_tanggal'] ?></td>
-                            <td><?= $pengumuman['pengumuman_user_id'] ?></td>
-                            <td></td>
+                            <td>
+                                <a 
+                                    href="<?= base_url("/admin/pengumuman/edit/") . $pengumuman['pengumuman_id'] ?>"
+                                    class="btn btn-warning"
+                                >Update</a>
+                                <a 
+                                    href="<?= base_url("/admin/pengumuman/delete/") . $pengumuman['pengumuman_id'] ?>" 
+                                    class="btn btn-danger"
+                                >Delete</a>
+                            </td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>

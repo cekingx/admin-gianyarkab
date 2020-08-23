@@ -27,10 +27,6 @@
                             <td>Tanggal</td>
                             <td><?= $pengumuman['pengumuman_tanggal'] ?></td>
                         </tr>
-                        <tr>
-                            <td>User Id</td>
-                            <td><?= $pengumuman['pengumuman_user_id'] ?></td>
-                        </tr>
                     </tbody>
                 </table>
                 <!--end: Datatable-->

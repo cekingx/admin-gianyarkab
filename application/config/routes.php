@@ -53,6 +53,7 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+//pengumuman
 $route['admin/pengumuman'] = 'pengumuman/index';
 $route['admin/pengumuman/create'] = 'pengumuman/create';
 $route['admin/pengumuman/store'] = 'pengumuman/store';
@@ -60,3 +61,12 @@ $route['admin/pengumuman/update'] = 'pengumuman/update';
 $route['admin/pengumuman/edit/(:any)'] = 'pengumuman/edit/$1';
 $route['admin/pengumuman/delete/(:any)'] = 'pengumuman/delete/$1';
 $route['admin/pengumuman/(:any)'] = 'pengumuman/show/$1';
+
+//jabatan bupati
+$route['admin/jabatan-bupati'] = 'jabatanbupati/index';
+$route['admin/jabatan-bupati/create'] = 'jabatanbupati/create';
+$route['admin/jabatan-bupati/store'] = 'jabatanbupati/store';
+$route['admin/jabatan-bupati/update'] = 'jabatanbupati/update';
+$route['admin/jabatan-bupati/edit/(:any)'] = 'jabatanbupati/edit/$1';
+$route['admin/jabatan-bupati/delete/(:any)'] = 'jabatanbupati/delete/$1';
+$route['admin/jabatan-bupati/(:any)'] = 'jabatanbupati/show/$1';

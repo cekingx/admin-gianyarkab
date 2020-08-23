@@ -10,7 +10,6 @@ class PengumumanSeeder extends Seeder
         $data = [
             'pengumuman_judul' => 'Lelang mobil',
             'pengumuman_isi' => 'Lelang mobil lama',
-            'pengumuman_user_id' => 1
         ];
 
         return $this->db->insert($this->table, $data);
