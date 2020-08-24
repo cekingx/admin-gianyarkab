@@ -96,7 +96,8 @@ class Pengumuman extends CI_Controller
 
     public function delete($pengumuman_id)
     {
-        if($this->pengumuman_model->delete($pengumuman_id)) {
+        if(!empty($this->pengumuman_model->getById($pengumuman_id))) {
+            $this->pengumuman_model->delete($pengumuman_id);
             $this->session->set_flashdata('message', 'Data berhasil dihapus');
             redirect('/admin/pengumuman');
         } else {

@@ -62,18 +62,44 @@ class Jabatanbupati extends CI_Controller
         }
     }
 
-    public function edit()
+    public function edit($jabatan_bupati_id)
     {
+        $data['jabatanbupati'] = $this->jabatanbupati_model->getById($jabatan_bupati_id);
+        if(empty($data['jabatanbupati'])) {
+            show_404();
+        }
 
+        $data['content'] = 'jabatanbupati/edit';
+        $data['title'] = $data['jabatanbupati']['jabatan_bupati_nama'];
+        $this->load->view('layouts/master', $data);
     }
 
     public function update()
     {
+        $post = $this->input->post();
+        $jabatan_bupati_id = $post['jabatan_bupati_id'];
+        $jabatanbupati = $this->jabatanbupati_model;
+        $validation = $this->form_validation;
+        $validation->set_rules($jabatanbupati->rules());
 
+        if($validation->run()) {
+            $jabatanbupati->update($jabatan_bupati_id);
+            $this->session->set_flashdata('message', 'Data berhasil diubah');
+            redirect('/admin/jabatan-bupati');
+        } else {
+            $this->session->set_flashdata('error', validation_errors());
+            redirect("/admin/jabatan-bupati/edit/$jabatan_bupati_id");
+        }
     }
 
-    public function delete()
+    public function delete($jabatan_bupati_id)
     {
-
+        if(!empty($this->jabatanbupati_model->getById($jabatan_bupati_id))) {
+            $this->jabatanbupati_model->delete($jabatan_bupati_id);
+            $this->session->set_flashdata('message', 'Data berhasil dihapus');
+            redirect('/admin/jabatan-bupati');
+        } else {
+            show_404();
+        }
     }
 }
