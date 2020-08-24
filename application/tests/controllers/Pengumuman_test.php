@@ -124,9 +124,9 @@ class Pengumuman_test extends TestCase
 
     public function test_WhenYouSuccessUpdatePengumumanThenYouRedirectedToIndex()
     {
-        $this->request->setcallable(
+        $this->request->setCallable(
             function ($ci) {
-                $pengumuman_model = $this->getdouble(
+                $pengumuman_model = $this->getDouble(
                     'pengumuman_model', ['update' => true]
                 );
                 $ci->pengumuman_model = $pengumuman_model;
@@ -148,9 +148,9 @@ class Pengumuman_test extends TestCase
 
     public function test_WhenYouFailedUpdatePengumumanThenYouRedirectedToEdit()
     {
-        $this->request->setcallable(
+        $this->request->setCallable(
             function ($ci) {
-                $pengumuman_model = $this->getdouble(
+                $pengumuman_model = $this->getDouble(
                     'pengumuman_model', ['update' => true]
                 );
                 $ci->pengumuman_model = $pengumuman_model;
@@ -172,9 +172,9 @@ class Pengumuman_test extends TestCase
 
     public function test_WhenYouEditNotExistedPengumumanThenYouGet404()
     {
-        $this->request->setcallable(
+        $this->request->setCallable(
             function ($ci) {
-                $pengumuman_model = $this->getdouble(
+                $pengumuman_model = $this->getDouble(
                     'pengumuman_model', ['getById' => null]
                 );
                 $ci->pengumuman_model = $pengumuman_model;
@@ -189,16 +189,23 @@ class Pengumuman_test extends TestCase
 
     public function test_WhenYouSuccessDeletePengumumanThenYouRedirectedToIndex()
     {
-        $this->request->setcallable(
-            function ($ci) {
-                $pengumuman_model = $this->getdouble(
-                    'pengumuman_model', ['delete' => true]
+        $result = [
+            'pengumuman_id' => 1,
+            'pengumuman_judul' => 'Pengumuman1',
+            'pengumuman_isi' => 'Isi pengumuman1',
+            'pengumuman_tanggal' => '2020-08-21',
+        ];
+
+        $this->request->setCallable(
+            function ($ci) use ($result) {
+                $pengumuman_model = $this->getDouble(
+                    'pengumuman_model', ['delete' => true, 'getById' => $result]
                 );
                 $ci->pengumuman_model = $pengumuman_model;
             }
         );
 
-        $pengumuman_id = 1;
+        $pengumuman_id = $result['pengumuman_id'];
         $this->request(
             'GET',
             "/admin/pengumuman/delete/$pengumuman_id"
@@ -209,10 +216,10 @@ class Pengumuman_test extends TestCase
 
     public function test_WhenYouDeleteNotExistedPengumumanThenYouGet404()
     {
-        $this->request->setcallable(
+        $this->request->setCallable(
             function ($ci) {
-                $pengumuman_model = $this->getdouble(
-                    'pengumuman_model', ['delete' => false]
+                $pengumuman_model = $this->getDouble(
+                    'pengumuman_model', ['delete' => false, 'getById' => null]
                 );
                 $ci->pengumuman_model = $pengumuman_model;
             }

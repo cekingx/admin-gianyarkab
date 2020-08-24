@@ -72,7 +72,11 @@
                         <?php foreach($pengumumans as $pengumuman): ?>
                         <tr>
                             <td><?= $pengumuman['pengumuman_id'] ?></td>
-                            <td><?= $pengumuman['pengumuman_judul'] ?></td>
+                            <td>
+                                <a href="<?= base_url("/admin/pengumuman/") . $pengumuman['pengumuman_id']?>">
+                                    <?= $pengumuman['pengumuman_judul'] ?>
+                                </a>
+                            </td>
                             <td><?= $pengumuman['pengumuman_isi'] ?></td>
                             <td><?= $pengumuman['pengumuman_tanggal'] ?></td>
                             <td>

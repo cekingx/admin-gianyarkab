@@ -52,7 +52,11 @@ class Jabatanbupati_model extends CI_Model
         $this->jabatan_bupati_id = $jabatan_bupati_id;
         $this->jabatan_bupati_nama = $post['jabatan_bupati_nama'];
         $this->jabatan_bupati_masa_jabatan = $post['jabatan_bupati_masa_jabatan'];
-        $this->jabatan_bupati_foto = $post['jabatan_bupati_foto'];    
+        if(!empty($_FILES['jabatan_bupati_foto']['name'])) {
+            $this->jabatan_bupati_foto = $this->uploadImage();
+        } else {
+            $this->jabatan_bupati_foto = $post['old_jabatan_bupati_foto'];
+        }
         
         $this->db->where('jabatan_bupati_id', $this->jabatan_bupati_id);
         return $this->db->update($this->table, $this);

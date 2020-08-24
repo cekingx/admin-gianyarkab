@@ -58,7 +58,7 @@ class Jabatanbupati_model_test extends TestCase
         $_POST = [
             'jabatan_bupati_nama' => $jabatan_bupati['jabatan_bupati_nama'],
             'jabatan_bupati_masa_jabatan' => $jabatan_bupati['jabatan_bupati_masa_jabatan'],
-            'jabatan_bupati_foto' => $jabatan_bupati['jabatan_bupati_foto']
+            'old_jabatan_bupati_foto' => $jabatan_bupati['jabatan_bupati_foto']
         ];
 
         $status = $this->obj->update($jabatan_bupati_id);

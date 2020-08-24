@@ -73,7 +73,11 @@
                         <?php foreach($jabatanbupati as $jabatanbupati): ?>
                         <tr>
                             <td><?= $jabatanbupati['jabatan_bupati_id'] ?></td>
-                            <td><?= $jabatanbupati['jabatan_bupati_nama'] ?></td>
+                            <td>
+                                <a href="<?= base_url('/admin/jabatan-bupati/') . $jabatanbupati['jabatan_bupati_id'] ?>">
+                                    <?= $jabatanbupati['jabatan_bupati_nama'] ?>
+                                </a>
+                            </td>
                             <td>
                                 <img 
                                     src="http://localhost/upload/jabatan_bupati/<?= $jabatanbupati['jabatan_bupati_foto'] ?>"  
