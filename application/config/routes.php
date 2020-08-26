@@ -70,3 +70,12 @@ $route['admin/jabatan-bupati/update'] = 'jabatanbupati/update';
 $route['admin/jabatan-bupati/edit/(:any)'] = 'jabatanbupati/edit/$1';
 $route['admin/jabatan-bupati/delete/(:any)'] = 'jabatanbupati/delete/$1';
 $route['admin/jabatan-bupati/(:any)'] = 'jabatanbupati/show/$1';
+
+//alamat instansi
+$route['admin/alamat-instansi'] = 'alamat_instansi/index';
+$route['admin/alamat-instansi/create'] = 'alamat_instansi/create';
+$route['admin/alamat-instansi/store'] = 'alamat_instansi/store';
+$route['admin/alamat-instansi/update'] = 'alamat_instansi/update';
+$route['admin/alamat-instansi/edit/(:any)'] = 'alamat_instansi/edit/$1';
+$route['admin/alamat-instansi/delete/(:any)'] = 'alamat_instansi/delete/$1';
+$route['admin/alamat-instansi/(:any)'] = 'alamat_instansi/show/$1';

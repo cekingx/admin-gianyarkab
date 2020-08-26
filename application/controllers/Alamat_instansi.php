@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Jabatanbupati extends CI_Controller
+class Alamat_instansi extends CI_Controller
 {
     public function __construct()
     {
         parent::__construct();
 
-        $this->load->model('jabatanbupati_model');
+        $this->load->model('alamat_instansi_model');
         $this->load->library('form_validation');
     }
 
@@ -17,21 +17,21 @@ class Jabatanbupati extends CI_Controller
             $data['message'] = $this->session->flashdata('message');
         }
 
-        $data['content'] = 'jabatanbupati/index';
-        $data['jabatanbupati'] = $this->jabatanbupati_model->getAll();
+        $data['content'] = 'alamat_instansi/index';
+        $data['alamat_instansi'] = $this->alamat_instansi_model->getAll();
 
         $this->load->view('layouts/master', $data);
     }
 
-    public function show($jabatan_bupati_id)
+    public function show($alamat_instansi_id)
     {
-        $data['jabatanbupati'] = $this->jabatanbupati_model->getById($jabatan_bupati_id);
-        if(empty($data['jabatanbupati'])) {
+        $data['alamat_instansi'] = $this->alamat_instansi_model->getById($alamat_instansi_id);
+        if(empty($data['alamat_instansi'])) {
             show_404();
         }
 
-        $data['content'] = 'jabatanbupati/show';
-        $data['title'] = $data['jabatanbupati']['jabatan_bupati_nama'];
+        $data['content'] = 'alamat_instansi/show';
+        $data['title'] = $data['alamat_instansi']['alamat_instansi_nama'];
 
         $this->load->view('layouts/master', $data);
     }
@@ -42,66 +42,64 @@ class Jabatanbupati extends CI_Controller
             $data['error'] = $this->session->flashdata('error');
         }
 
-        $data['content'] = 'jabatanbupati/create';
+        $data['content'] = 'alamat_instansi/create';
         $this->load->view('layouts/master', $data);
     }
 
     public function store()
     {
-        $jabatanbupati = $this->jabatanbupati_model;
+        $alamat_instansi = $this->alamat_instansi_model;
         $validation = $this->form_validation;
-        $validation->set_rules($jabatanbupati->rules());
+        $validation->set_rules($alamat_instansi->rules());
 
         if($validation->run()) {
-            $jabatanbupati->save();
+            $alamat_instansi->save();
             $this->session->set_flashdata('message', 'Data berhasil dibuat');
-            redirect('/admin/jabatan-bupati');
-        } else {
+            redirect('/admin/alamat-instansi');
+        }  else {
             $this->session->set_flashdata('error', validation_errors());
-            redirect('/admin/jabatan-bupati/create');
+            redirect('/admin/alamat-instansi/create');
         }
     }
 
-    public function edit($jabatan_bupati_id)
+    public function edit($alamat_instansi_id)
     {
-        $data['jabatanbupati'] = $this->jabatanbupati_model->getById($jabatan_bupati_id);
-        if(empty($data['jabatanbupati'])) {
+        $data['alamat_instansi'] = $this->alamat_instansi_model->getById($alamat_instansi_id);
+        if(empty($data['alamat_instansi'])) {
             show_404();
         }
 
         if(!empty($this->session->flashdata('error'))) {
             $data['error'] = $this->session->flashdata('error');
         }
-
-        $data['content'] = 'jabatanbupati/edit';
-        $data['title'] = $data['jabatanbupati']['jabatan_bupati_nama'];
+        $data['content'] = 'alamat_instansi/edit';
         $this->load->view('layouts/master', $data);
     }
 
     public function update()
     {
         $post = $this->input->post();
-        $jabatan_bupati_id = $post['jabatan_bupati_id'];
-        $jabatanbupati = $this->jabatanbupati_model;
+        $alamat_instansi_id = $post['alamat_instansi_id'];
+        $alamat_instansi = $this->alamat_instansi_model;
         $validation = $this->form_validation;
-        $validation->set_rules($jabatanbupati->rules());
+        $validation->set_rules($alamat_instansi->rules());
 
         if($validation->run()) {
-            $jabatanbupati->update($jabatan_bupati_id);
+            $alamat_instansi->update($alamat_instansi_id);
             $this->session->set_flashdata('message', 'Data berhasil diubah');
-            redirect('/admin/jabatan-bupati');
+            redirect('/admin/alamat-instansi');
         } else {
             $this->session->set_flashdata('error', validation_errors());
-            redirect("/admin/jabatan-bupati/edit/$jabatan_bupati_id");
+            redirect("/admin/alamat-instansi/edit/$alamat_instansi_id");
         }
     }
 
-    public function delete($jabatan_bupati_id)
+    public function delete($alamat_instansi_id)
     {
-        if(!empty($this->jabatanbupati_model->getById($jabatan_bupati_id))) {
-            $this->jabatanbupati_model->delete($jabatan_bupati_id);
+        if(!empty($this->alamat_instansi_model->getById($alamat_instansi_id))) {
+            $this->alamat_instansi_model->delete($alamat_instansi_id);
             $this->session->set_flashdata('message', 'Data berhasil dihapus');
-            redirect('/admin/jabatan-bupati');
+            redirect('admin/alamat-instansi');
         } else {
             show_404();
         }

@@ -19,6 +19,11 @@
                     <span class="menu-text">Jabatan Bupati</span>
                 </a>
             </li>
+            <li class="menu-item menu-item-rel <?php if ($this->uri->segment(2) == 'alamat-instansi') : ?>menu-item-here<?php endif; ?>" data-menu-toggle="click" aria-haspopup="true">
+                <a href="<?php echo site_url('/admin/alamat-instansi') ?>" class="menu-link">
+                    <span class="menu-text">Alamat Instansi</span>
+                </a>
+            </li>
         </ul>
         <!--end::Header Nav-->
     </div>
