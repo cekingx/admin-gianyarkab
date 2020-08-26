@@ -73,6 +73,7 @@ class Alamat_instansi extends CI_Controller
             $data['error'] = $this->session->flashdata('error');
         }
         $data['content'] = 'alamat_instansi/edit';
+        $data['title'] = $data['alamat_instansi']['alamat_instansi_nama'];
         $this->load->view('layouts/master', $data);
     }
 

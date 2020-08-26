@@ -99,7 +99,6 @@ class Alamat_instansi_test extends TestCase
 
     public function test_WhenAccessNotExistedAlamatInstansiThenGet404()
     {
-
         $this->request->setCallable(
             function ($ci) {
                 $alamat_instansi_model = $this->getDouble(
