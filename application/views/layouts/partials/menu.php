@@ -29,6 +29,11 @@
                     <span class="menu-text">Sub Domain</span>
                 </a>
             </li>
+            <li class="menu-item menu-item-rel <?php if ($this->uri->segment(2) == 'hubungi-kami') : ?>menu-item-here<?php endif; ?>" data-menu-toggle="click" aria-haspopup="true">
+                <a href="<?php echo site_url('/admin/hubungi-kami') ?>" class="menu-link">
+                    <span class="menu-text">Kontak</span>
+                </a>
+            </li>
         </ul>
         <!--end::Header Nav-->
     </div>

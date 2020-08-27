@@ -87,3 +87,10 @@ $route['admin/subdomain/store'] = 'subdomain/store';
 $route['admin/subdomain/update'] = 'subdomain/update';
 $route['admin/subdomain/edit/(:any)'] = 'subdomain/edit/$1';
 $route['admin/subdomain/delete/(:any)'] = 'subdomain/delete/$1';
+
+//kontak person
+$route['admin/hubungi-kami'] = 'kontak/index';
+$route['hubungi-kami'] = 'kontak/create';
+$route['hubungi-kami/store'] = 'kontak/store';
+$route['admin/hubungi-kami/delete/(:any)'] = 'kontak/delete/$1';
+$route['admin/hubungi-kami/(:any)'] = 'kontak/show/$1';

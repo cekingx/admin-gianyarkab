@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Subdomain_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Subdomain_test.php" tests="8" assertions="14" errors="0" failures="0" skipped="0" time="0.040761">
-    <testcase name="test_WhenAccessAllSubdomainThenGetAllSubdomain" class="Subdomain_test" classname="Subdomain_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Subdomain_test.php" line="53" assertions="2" time="0.012617"/>
-    <testcase name="test_WhenSuccessAddSubdomainThenRedirectedToIndex" class="Subdomain_test" classname="Subdomain_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Subdomain_test.php" line="70" assertions="2" time="0.004885"/>
-    <testcase name="test_WhenFailedAddSubdomainThenRedirectedToCreate" class="Subdomain_test" classname="Subdomain_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Subdomain_test.php" line="89" assertions="2" time="0.003293"/>
-    <testcase name="test_WhenSuccessUpdateSubdomainThenRedirectedToIndex" class="Subdomain_test" classname="Subdomain_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Subdomain_test.php" line="107" assertions="2" time="0.003189"/>
-    <testcase name="test_WhenFailedUpdateSubdomianThenRedirectedToEdit" class="Subdomain_test" classname="Subdomain_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Subdomain_test.php" line="126" assertions="2" time="0.003446"/>
-    <testcase name="test_WhenUpdateNotExistedSubdomainThenGet404" class="Subdomain_test" classname="Subdomain_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Subdomain_test.php" line="147" assertions="1" time="0.005274"/>
-    <testcase name="test_WhenSuccessDeleteSubdomainThenRedirectedToIndex" class="Subdomain_test" classname="Subdomain_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Subdomain_test.php" line="163" assertions="2" time="0.004510"/>
-    <testcase name="test_WhenDeleteNotExistedSubdomainThenGet404" class="Subdomain_test" classname="Subdomain_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Subdomain_test.php" line="179" assertions="1" time="0.003548"/>
+  <testsuite name="Kontak_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Kontak_test.php" tests="7" assertions="12" errors="0" failures="0" skipped="0" time="0.031893">
+    <testcase name="test_WhenAccessAllKontakThenGetAllKontak" class="Kontak_test" classname="Kontak_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Kontak_test.php" line="55" assertions="2" time="0.008077"/>
+    <testcase name="test_WhenAccessSpecificKontakThenGetSpecificKontak" class="Kontak_test" classname="Kontak_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Kontak_test.php" line="72" assertions="2" time="0.005203"/>
+    <testcase name="test_WhenAccessNotExistedKontakThenGet404" class="Kontak_test" classname="Kontak_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Kontak_test.php" line="89" assertions="1" time="0.003441"/>
+    <testcase name="test_WhenSuccessAddKontakThenRedirectedToCreate" class="Kontak_test" classname="Kontak_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Kontak_test.php" line="104" assertions="2" time="0.004210"/>
+    <testcase name="test_WhenFailedAddKontakThenRedirectedToCreate" class="Kontak_test" classname="Kontak_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Kontak_test.php" line="123" assertions="2" time="0.003533"/>
+    <testcase name="test_WhenSuccessDeleteKontakThenRedirectedToIndex" class="Kontak_test" classname="Kontak_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Kontak_test.php" line="142" assertions="2" time="0.004155"/>
+    <testcase name="test_WhenDeleteNotExistedKontakThenGet404" class="Kontak_test" classname="Kontak_test" file="/home/cekingx/Coding/php/admin-gianyarkab/application/tests/controllers/Kontak_test.php" line="158" assertions="1" time="0.003274"/>
   </testsuite>
 </testsuites>
